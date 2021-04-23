@@ -12,11 +12,9 @@ export default function Navigation() {
       <ButtonGroup
         fullWidth
         variant="text"
-        
         aria-label="text primary button group"
       >
         <Button
-          
           variant={pathname === paths.HOME ? 'contained' : 'text'}
           onClick={() => {
             history.push(paths.HOME);
@@ -26,7 +24,6 @@ export default function Navigation() {
         </Button>
 
         <Button
-          
           onClick={() => {
             history.push(paths.FAVORITES);
           }}

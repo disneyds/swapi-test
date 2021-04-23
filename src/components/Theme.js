@@ -2,15 +2,11 @@ import { Box, Button, ButtonGroup } from '@material-ui/core';
 import React from 'react';
 
 export default function Theme({darkState,handleThemeChange}) {
-
-
-
   return (
     <Box p={3}>
       <ButtonGroup
         fullWidth
         variant="text"
-        
         aria-label="text primary button group"
       >
         <Button

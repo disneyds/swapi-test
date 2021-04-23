@@ -17,18 +17,18 @@ export default function HomePage() {
     const [open, setOpen] = useState(true);
     const [page, setPage] = useState(1);
 
-    const loadMore = () => {
-        setPage(page + 1)
-        setOpen(!open)
-    } 
-
     useEffect(() => {
         async function fatch ()  {
             await requestCharacters(page).then(res => (setCharacters([...characters, ...res.results])))
             setOpen(!open)
         }
         fatch()
-    }, [page])   
+    }, [page])
+    
+    const loadMore = () => {
+        setPage(page + 1)
+        setOpen(!open)
+    } 
     
     return (
         <>
@@ -45,7 +45,6 @@ export default function HomePage() {
                         Load More
                     </Button>}
                 </Box>
-                
             </Paper>
             
             <Backdrop className={classes.backdrop} open={open} >
