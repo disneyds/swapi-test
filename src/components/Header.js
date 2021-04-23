@@ -1,14 +1,25 @@
-import { AppBar, Container, Switch, Toolbar } from '@material-ui/core'
+import { AppBar, Container, Grid, Toolbar, Typography } from '@material-ui/core'
 import React from 'react'
+import Theme from './Theme'
+import Navigation from './Navigation'
 
 export default function Header({darkState,handleThemeChange}) {
-    return (
-        <AppBar position="absolute">
-            <Toolbar>
-              <Container maxWidth="md">
-                    <Switch checked={darkState} onChange={handleThemeChange} />
-                </Container>
-            </Toolbar>
-        </AppBar>
+  return (
+    <AppBar position="fixed">
+      <Toolbar>
+        <Container maxWidth="md">
+          <Grid
+            container
+            direction="row"
+            justify="space-around"
+              alignItems="center"
+          >
+            <Navigation/>
+            <Typography align='center' variant='h5'>And whose side are you on?</Typography>
+            <Theme darkState={darkState} handleThemeChange={handleThemeChange}/>
+          </Grid>
+        </Container>
+      </Toolbar>
+    </AppBar>
     )
 }

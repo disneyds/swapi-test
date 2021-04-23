@@ -1,19 +1,17 @@
 import { Backdrop, Box, Button, CircularProgress, makeStyles, Paper } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
 import CharacterList from '../components/CharacterList';
-import {requestCharacters} from '../servises/API'
+import { requestCharacters } from '../servises/API'
 
-export default function HomePage() {
-    const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
     backdrop: {
     zIndex: theme.zIndex.drawer + 1,
             color: '#fff',
-    paper: {
-      width: "100%",
-      minHeight: "100vh",
-    }
         },
     }));
+
+export default function HomePage() {
+    
     const classes = useStyles();
     const [characters, setCharacters] = useState([]);
     const [open, setOpen] = useState(true);
@@ -34,8 +32,8 @@ export default function HomePage() {
     
     return (
         <>
-             <Paper className={classes.paper} elevation={3}>
-                <Box mt={6} p={3}>
+            <Paper  elevation={3}>
+                <Box mt={9} p={3}>
                     <CharacterList characters={characters} />
                     {!open && <Button
                         fullWidth
@@ -47,11 +45,13 @@ export default function HomePage() {
                         Load More
                     </Button>}
                 </Box>
+                
             </Paper>
+            
             <Backdrop className={classes.backdrop} open={open} >
                 <CircularProgress color="inherit" />
             </Backdrop>
-
+            
         </>
     )
 }

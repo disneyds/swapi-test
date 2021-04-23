@@ -1,0 +1,14 @@
+.lightImg {
+  max-width: 500px;
+  position: fixed;
+  bottom: -40px;
+  left: -40px;
+  pointer-events: none;
+}
+.darkImg {
+  max-width: 600px;
+  position: fixed;
+  bottom: 0px;
+  right: -30px;
+  pointer-events: none;
+}

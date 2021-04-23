@@ -28,3 +28,8 @@ export async function requestVehicles (url) {
   return data;
 }
 
+export async function requestFavorites(url) {
+    const { data } = await axios.get(`${url}`);
+  return data;
+}
+
