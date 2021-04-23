@@ -12,3 +12,13 @@
   right: -30px;
   pointer-events: none;
 }
+
+@media screen and (max-width: 550px) {
+  .lightImg {
+    max-width: 300px;
+  }
+
+  .darkImg {
+    max-width: 400px;
+  }
+}

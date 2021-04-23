@@ -1,5 +1,5 @@
-import { Box, Button, ButtonGroup } from '@material-ui/core';
 import React from 'react';
+import { Box, Button, ButtonGroup } from '@material-ui/core';
 
 export default function Theme({darkState,handleThemeChange}) {
   return (

@@ -1,7 +1,7 @@
-import { AppBar, Container, Grid, Toolbar, Typography } from '@material-ui/core'
 import React from 'react'
 import Theme from './Theme'
 import Navigation from './Navigation'
+import { AppBar, Container, Grid, Toolbar, Typography } from '@material-ui/core'
 
 export default function Header({darkState,handleThemeChange}) {
   return (

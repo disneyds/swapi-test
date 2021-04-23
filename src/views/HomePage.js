@@ -1,14 +1,14 @@
-import { Backdrop, Box, Button, CircularProgress, makeStyles, Paper } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
-import CharacterList from '../components/CharacterList';
+import { Backdrop, Box, Button, CircularProgress, makeStyles, Paper } from '@material-ui/core';
 import { requestCharacters } from '../servises/API'
+import CharacterList from '../components/CharacterList';
 
 const useStyles = makeStyles((theme) => ({
     backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
-            color: '#fff',
-        },
-    }));
+        zIndex: theme.zIndex.drawer + 1,
+        color: '#fff',
+    },
+}));
 
 export default function HomePage() {
     
@@ -50,7 +50,6 @@ export default function HomePage() {
             <Backdrop className={classes.backdrop} open={open} >
                 <CircularProgress color="inherit" />
             </Backdrop>
-            
         </>
     )
 }

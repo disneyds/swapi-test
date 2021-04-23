@@ -16,13 +16,14 @@ import lightImg from './img/lightImg.png'
 
 
 
-function App() {
+export default function App() {
   const localTheme = JSON.parse(localStorage.getItem('theme'))
   const theme = localTheme === null ? false : localTheme
-  const [darkState, setDarkState] = useState(theme);
-  const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? orange[500] : lightBlue[500];
-  const mainSecondaryColor = darkState ? deepOrange[900] : deepPurple[500];
+  const [darkState, setDarkState] = useState(theme)
+
+  const palletType = darkState ? "dark" : "light"
+  const mainPrimaryColor = darkState ? orange[500] : lightBlue[500]
+  const mainSecondaryColor = darkState ? deepOrange[900] : deepPurple[500]
   const darkTheme = createMuiTheme({
     palette: {
       type: palletType,
@@ -33,12 +34,12 @@ function App() {
         main: mainSecondaryColor
       }
     }
-  });
+  })
 
   const handleThemeChange = () => {
     JSON.stringify(localStorage.setItem('theme', !darkState))
     setDarkState(!darkState);
-  };
+  }
 
   return <div className='layout'>
     <ThemeProvider theme={darkTheme}>
@@ -55,7 +56,6 @@ function App() {
       }
     </ThemeProvider>
   </div>
-   
 }
 
-export default App;
+

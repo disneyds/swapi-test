@@ -1,8 +1,8 @@
-import { Backdrop, Box, CircularProgress, Container, makeStyles, Paper, Typography } from '@material-ui/core';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
+import axios from 'axios';
 import {requestHomeWorld, requestFilms, requestVehicles} from '../servises/API'
+import { Backdrop, Box, CircularProgress, Container, makeStyles, Paper, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     backdrop: {

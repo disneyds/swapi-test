@@ -1,7 +1,7 @@
-import { Box, Button, ButtonGroup } from '@material-ui/core';
-import paths from '../routes/paths';
 import React from 'react';
+import paths from '../routes/paths';
 import { useHistory, useLocation } from 'react-router';
+import { Box, Button, ButtonGroup } from '@material-ui/core';
 
 export default function Navigation() {
   const history = useHistory();

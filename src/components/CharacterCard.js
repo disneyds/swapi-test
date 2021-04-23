@@ -1,12 +1,12 @@
-import { Box, Checkbox, Fab, FormControlLabel, Paper, Tooltip, Typography } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 import paths from '../routes/paths';
+import { Link } from 'react-router-dom';
 import { requestHomeWorld } from '../servises/API'
-import defImgSW from '../img/defImgSW.jpg'
-import { Favorite, FavoriteBorder } from '@material-ui/icons';
 import {getFavFromLocalStorage, setOrRemoveFavInLocalStorage} from '../servises/localStorage'
+import { Box, Checkbox, FormControlLabel, Paper, Tooltip, Typography } from '@material-ui/core'
+import { Favorite, FavoriteBorder } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+import defImgSW from '../img/defImgSW.jpg'
 
 const useStyles = makeStyles({
   like: {
@@ -29,7 +29,6 @@ export default function CharacterCard({ character, avatar }) {
     useEffect(() => {
         const favData = getFavFromLocalStorage()
         setChecked(Boolean(favData.find(fav => fav === character.url)))
-        console.log(update);
     }, [update])
 
     return <Tooltip title={character.name} arrow>
@@ -44,20 +43,17 @@ export default function CharacterCard({ character, avatar }) {
             </Box>
         </Paper>
         </Link>
-        {/* <Fab className={classes.like} onClick={() => { setOrRemoveFavInLocalStorage(character.url) }} aria-label="like" size='small'>
-             <Favorite />
-        </Fab> */}
         <FormControlLabel
             className={classes.like}
             control={<Checkbox icon={<FavoriteBorder />} 
-            onChange={() => { 
-                setOrRemoveFavInLocalStorage(character.url)
-                setUpdate(update + 1)
-            }}
-             checked= {checked}
-            checkedIcon={<Favorite />} 
+                onChange={() => { 
+                    setOrRemoveFavInLocalStorage(character.url)
+                    setUpdate(update + 1)
+                }}
+                checked= {checked}
+                checkedIcon={<Favorite />} 
             />}
         />
         </Box>
-        </Tooltip>
+    </Tooltip>
 }

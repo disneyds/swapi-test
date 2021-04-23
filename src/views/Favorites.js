@@ -1,8 +1,8 @@
-import { Box, Paper, Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
-import CharacterList from '../components/CharacterList';
+import { Box, Paper, Typography } from '@material-ui/core';
 import { requestFavorites } from '../servises/API';
 import { getFavFromLocalStorage } from '../servises/localStorage';
+import CharacterList from '../components/CharacterList';
 
 export default function Favorits() {
     const [characters, setCharacters] = useState([]);
@@ -21,8 +21,8 @@ export default function Favorits() {
     }
     favoritesCharacters()
     }, [characters])
-    return (
-        <>
+
+    return <>
         {characters.length === 0 
         ? <Paper  elevation={3}>
             <Box mt={13} p={3}>
@@ -35,5 +35,4 @@ export default function Favorits() {
             </Box>
         </Paper>}
     </>
-    )
 }
