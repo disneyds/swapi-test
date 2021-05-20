@@ -4,32 +4,32 @@ const BASE_URL = 'https://swapi.dev/api';
 
 
 export async function requestCharacters(page = 1) {
-  const { data } = await axios.get(`${BASE_URL}/people?page=${page}`);
+  const { data } = await axios.get(`${BASE_URL}/people?page=${page}`.replace('http:', 'https:'));
   return data;
 }
 
 export async function requestPlanets(page = 1) {
-  const { data } = await axios.get(`${BASE_URL}/planets?page=${page}`);
+  const { data } = await axios.get(`${BASE_URL}/planets?page=${page}`.replace('http:', 'https:'));
   return data;
 }
 
 export async function requestHomeWorld(url) {
-    const { data } = await axios.get(`${url}`);
+    const { data } = await axios.get(`${url}`.replace('http:', 'https:'));
   return data;
 }
 
 export async function requestFilms(url) {
-    const { data } = await axios.get(`${url}`);
+    const { data } = await axios.get(`${url}`.replace('http:', 'https:'));
   return data;
 }
 
 export async function requestVehicles (url) {
-    const { data } = await axios.get(`${url}`);
+    const { data } = await axios.get(`${url}`.replace('http:', 'https:'));
   return data;
 }
 
 export async function requestFavorites(url) {
-    const { data } = await axios.get(`${url}`);
+    const { data } = await axios.get(`${url}`.replace('http:', 'https:'));
   return data;
 }
 
